@@ -68,7 +68,10 @@ const Product = () => {
 
                         <div className="md:flex-1 px-4 grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4">
                             <div className=" h-fit col-span-1 rounded-lg bg-gray-300 mb-4 relative">
-                                <ImagesCarusel images={data} button={false} />
+                                {/* <SlideshowLightbox className="space-y-2 overflow-hidden" showThumbnails={true}> */}
+
+                                    <ImagesCarusel images={data} button={false} />
+                                {/* </SlideshowLightbox> */}
                                 <div className=" absolute top-2 right-3 p-2  cursor-pointer border bg-white rounded-full">
                                     <HeartIcon size={18} className="text-red-500 hover:scale-125 duration-300" />
                                 </div>
