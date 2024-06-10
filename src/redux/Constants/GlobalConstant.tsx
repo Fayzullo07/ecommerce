@@ -1,1 +1,0 @@
-export const GET_GLOBAL_DETEILS = "GET_GLOBAL_DETEILS";

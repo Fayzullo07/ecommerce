@@ -5,14 +5,13 @@ import { HeartIcon, StarIcon } from "lucide-react";
 import {
     Carousel,
     CarouselContent,
-    CarouselItem,
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 
-const Product = ({ data, index }: { data: any, index: number }) => {
+const Product = ({ index }: { data: any, index: number }) => {
     return (
         <div key={index} className=" w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
             <Link to={`/product/${index}`}>

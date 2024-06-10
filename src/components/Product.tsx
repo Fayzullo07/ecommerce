@@ -288,7 +288,7 @@ const Product = () => {
 
                                     </div>
                                     <div className="col-span-2">
-                                        {reviews.slice(0, 2).map((item, index) => (
+                                        {reviews.slice(0, 2).map((_, index) => (
                                             <div key={index} className="flex items-start mb-4 pb-4 border-b border-gray-300">
                                                 <div className="flex-shrink-0">
                                                     <div className="inline-block relative">
@@ -324,7 +324,7 @@ const Product = () => {
                                             <Modal button={<button className="text-base bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded-full">All</button>} >
                                                 <ScrollArea className="h-[380px] p-2">
 
-                                                    {reviews.map((item, index) => (
+                                                    {reviews.map((_, index) => (
                                                         <div key={index} className=" text-start flex items-start mb-4 pb-4 border-b border-gray-300">
                                                             <div className="flex-shrink-0">
                                                                 <div className="inline-block relative">

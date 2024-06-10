@@ -1,7 +1,6 @@
 import Container from "@/Core/Container";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Switch } from "@/components/ui/switch"
-import { ImageIcon, SearchIcon, StarIcon, XCircleIcon, XIcon } from "lucide-react";
+import { ImageIcon, SearchIcon, StarIcon, XIcon } from "lucide-react";
 
 const Compare = () => {
 
@@ -86,7 +85,7 @@ const Compare = () => {
                                                     </tr>
                                                     <tr className="bg-gray-200 border-b">
                                                         <td className="px-6 py-2 whitespace-nowrap text-sm font-semibold tracking-wider text-gray-900">Storage</td>
-                                                        {data.map((item, index) => (
+                                                        {data.map((_, index) => (
                                                             <td key={index} className="px-2  py-4 whitespace-nowrap text-sm font-medium text-gray-900">
 
                                                             </td>

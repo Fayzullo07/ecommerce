@@ -15,7 +15,7 @@ import Products from "./components/Products";
 
 
 import 'lightbox.js-react/dist/index.css'
-import { SlideshowLightbox, initLightboxJS } from 'lightbox.js-react'
+import { initLightboxJS } from 'lightbox.js-react'
 import Compare from "./pages/Compare";
 
 const Routing = () => {

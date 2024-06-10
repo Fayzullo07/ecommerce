@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { navbar } from "../data/data";
 
 import {
@@ -14,17 +13,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const [stickyNav, setStickyNav] = useState(false);
-
-    const handleScroll = () => {
-        window.pageYOffset >= 10 ? setStickyNav(true) : setStickyNav(false);
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.addEventListener("scroll", handleScroll);
-    });
-
 
     return (
         <div className="">
