@@ -15,7 +15,7 @@ import AutoScroll from "embla-carousel-auto-scroll"
 
 const Product = ({ index }: { data: any, index: number }) => {
     return (
-        <div className=" w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
+        <div className=" w-48 md:w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
             <Link to={`/product/${index}`}>
                 <div className="overflow-hidden relative h-48 w-full text-center p-1 bg-gray-200">
                     <img className="object-cover w-40 mx-auto hover:scale-105 duration-300" src="https://brostore.uz/cdn/shop/files/green1_pixian_ai_345x_crop_center.png?v=1709802054" alt="Converse sneakers" />

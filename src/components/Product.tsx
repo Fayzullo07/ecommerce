@@ -437,7 +437,7 @@ const Product = () => {
                                         ))}
                                         <div className=" text-center">
                                             <Modal button={<button className="text-base bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded-full">All</button>} >
-                                                <ScrollArea className="h-[380px] p-2 border">
+                                                <ScrollArea className="h-[380px] p-2">
 
                                                     {reviews.map((_, index) => (
                                                         <div key={index} className="flex items-start mb-4 pb-4 border-b border-gray-300 text-start">
