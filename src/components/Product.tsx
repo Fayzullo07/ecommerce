@@ -17,6 +17,19 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Button } from "./ui/button";
+
+
 
 const Product = () => {
     const { id } = useParams();
@@ -58,7 +71,7 @@ const Product = () => {
 
                         </div>
 
-                        <div className="md:flex-1 px-4 grid grid-cols-1 md:grid-cols-3 gap-4 ">
+                        <div className="md:flex-1 px-4 grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4">
                             <div className=" h-fit col-span-1 rounded-lg bg-gray-300 mb-4 relative">
                                 <ImagesCarusel images={data} button={false} />
                                 <div className=" absolute top-2 right-3 p-2  cursor-pointer border bg-white rounded-full">
@@ -74,39 +87,76 @@ const Product = () => {
                             </div>
 
                             <div className=" col-span-2 px-4">
-                                <h2 className="text-3xl font-bold text-gray-800 mb-2">Apple iPhone 15 Pro Max</h2>
+                                <h2 className="text-3xl font-bold text-gray-800 mb-2 hidden md:block">Apple iPhone 15 Pro Max</h2>
+
 
                                 <div className="mb-4">
-                                    <div className="flex items-center mt-2">
-                                        <TooltipProvider>
-                                            <Tooltip>
-                                                <TooltipTrigger>
-                                                    <div className="flex items-center justify-between p-1 px-2 cursor-pointer duration-300">
-                                                        <StarIcon size={16} className=" text-yellow-600 mr-2" />
-                                                        <span>4,6</span>
-                                                    </div>
-                                                </TooltipTrigger>
-                                                <TooltipContent>
-                                                    <p>2575 reviews</p>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                        </TooltipProvider>
-                                        <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
-                                        <div className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                            <PenLineIcon size={16} className=" text-yellow-600 mr-2" />
-                                            <span>Please rate</span>
+                                    <div className="hidden md:block">
+
+                                        <div className="flex items-center mt-2 ">
+                                            <TooltipProvider>
+                                                <Tooltip>
+                                                    <TooltipTrigger>
+                                                        <div className="flex items-center justify-between p-1 px-2 cursor-pointer duration-300">
+                                                            <StarIcon size={16} className=" text-yellow-600 mr-2" />
+                                                            <span>4,6</span>
+                                                        </div>
+                                                    </TooltipTrigger>
+                                                    <TooltipContent>
+                                                        <p>2575 reviews</p>
+                                                    </TooltipContent>
+                                                </Tooltip>
+                                            </TooltipProvider>
+                                            <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
+                                            <div className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                <PenLineIcon size={16} className=" text-yellow-600 mr-2" />
+                                                <span>Please rate</span>
+                                            </div>
+                                            <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
+                                            <div className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                <BellIcon size={16} className=" text-red-500 mr-2" />
+                                                <span>Monitor price</span>
+                                            </div>
+                                            <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
+                                            <Link to={`/product/${id}/compare`} className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                <GitCompareArrowsIcon size={16} className=" text-green-500 mr-2" />
+                                                <span>Compare</span>
+                                            </Link>
                                         </div>
-                                        <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
-                                        <div className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                            <BellIcon size={16} className=" text-red-500 mr-2" />
-                                            <span>Monitor price</span>
-                                        </div>
-                                        <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
-                                        <Link to={`/product/${id}/compare`} className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                            <GitCompareArrowsIcon size={16} className=" text-green-500 mr-2" />
-                                            <span>Compare</span>
-                                        </Link>
                                     </div>
+
+                                    <div className="block md:hidden">
+                                        <div className="flex items-start justify-between mb-4">
+
+                                            <h2 className="text-xl font-bold text-gray-800 mb-2">Apple iPhone 15 Pro Max</h2>
+                                            <div>
+                                                <Drawer>
+                                                    <DrawerTrigger>
+                                                        <div className="border bg-white rounded-full p-1 px-3 space-y-1 hover:scale-110 duration-300">
+                                                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
+                                                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
+                                                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
+                                                        </div>
+                                                    </DrawerTrigger>
+                                                    <DrawerContent>
+                                                        <DrawerHeader>
+                                                            <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+                                                            <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                                                        </DrawerHeader>
+                                                        <DrawerFooter>
+                                                            <Button>Submit</Button>
+                                                            <DrawerClose>
+                                                                <Button variant="outline">Cancel</Button>
+                                                            </DrawerClose>
+                                                        </DrawerFooter>
+                                                    </DrawerContent>
+                                                </Drawer>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                                 <div className="mb-2">
                                     <span className="font-bold text-gray-700">Product Description:</span>
