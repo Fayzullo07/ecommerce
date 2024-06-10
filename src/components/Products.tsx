@@ -15,7 +15,7 @@ import AutoScroll from "embla-carousel-auto-scroll"
 
 const Product = ({ index }: { data: any, index: number }) => {
     return (
-        <div className=" w-48 md:w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
+        <div className=" w-44 md:w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
             <Link to={`/product/${index}`}>
                 <div className="overflow-hidden relative h-48 w-full text-center p-1 bg-gray-200">
                     <img className="object-cover w-40 mx-auto hover:scale-105 duration-300" src="https://brostore.uz/cdn/shop/files/green1_pixian_ai_345x_crop_center.png?v=1709802054" alt="Converse sneakers" />
@@ -72,21 +72,32 @@ const Products = () => {
         <div className="bg-white py-10">
             <Container>
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">Products</h2>
-                <Carousel
-                    plugins={[plugin2.current]}
-                    onMouseEnter={plugin2.current.stop}
-                    onMouseLeave={plugin2.current.play}
-                >
-                    <CarouselContent>
+                <div className="hidden md:block">
+                    <Carousel
+                        plugins={[plugin2.current]}
+                        onMouseEnter={plugin2.current.stop}
+                        onMouseLeave={plugin2.current.play}
+                    >
+                        <CarouselContent>
+                            {data.map((_, index) => (
+                                <CarouselItem key={index} className=" pr-1 basis-1/2 md:basis-[18%]">
+                                    <Product data={data[index]} index={index} />
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </div>
+
+                <div className="block md:hidden">
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
+
                         {data.map((_, index) => (
-                            <CarouselItem key={index} className=" pr-1 basis-1/2 md:basis-[18%]">
-                                <Product data={data[index]} index={index} />
-                            </CarouselItem>
+                            <Product key={index} data={data[index]} index={index} />
                         ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </Carousel>
+                    </div>
+                </div>
             </Container>
         </div>
 

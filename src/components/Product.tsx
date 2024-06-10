@@ -85,19 +85,19 @@ const Product = () => {
                             </div>
 
                             <div className=" col-span-2 px-4">
-                                <h2 className="text-3xl font-bold text-gray-800 mb-2 hidden md:block">Apple iPhone 15 Pro Max</h2>
+                                <h2 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2 ">Apple iPhone 15 Pro Max</h2>
 
 
                                 <div className="mb-4">
-                                    <div className="hidden md:block">
+                                    <div className="">
 
-                                        <div className="flex items-center mt-2 ">
+                                        <div className="flex items-center justify-between mt-2 text-xs md:text-sm">
                                             <TooltipProvider>
                                                 <Tooltip>
                                                     <TooltipTrigger>
-                                                        <div className="flex items-center justify-between p-1 px-2 cursor-pointer duration-300">
-                                                            <StarIcon size={16} className=" text-yellow-600 mr-2" />
-                                                            <span>4,6</span>
+                                                        <div className="flex items-center justify-between p-1 cursor-pointer duration-300">
+                                                            <StarIcon  className="w-3 md:w-5 text-yellow-600 mr-1 md:mr-2" />
+                                                            <span >4,6</span>
                                                         </div>
                                                     </TooltipTrigger>
                                                     <TooltipContent>
@@ -105,25 +105,31 @@ const Product = () => {
                                                     </TooltipContent>
                                                 </Tooltip>
                                             </TooltipProvider>
-                                            <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
-                                            <div className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                <PenLineIcon size={16} className=" text-yellow-600 mr-2" />
+
+                                            <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
+
+                                            <div className="flex items-center justify-between p-1 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                <PenLineIcon size={16} className="w-3 md:w-5 text-yellow-600 mr-1 md:mr-2" />
                                                 <span>Please rate</span>
                                             </div>
-                                            <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
-                                            <div className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                <BellIcon size={16} className=" text-red-500 mr-2" />
+
+                                            <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
+
+                                            <div className="flex items-center justify-between p-1 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                <BellIcon size={16} className="w-3 md:w-5 text-red-600 mr-1 md:mr-2" />
                                                 <span>Monitor price</span>
                                             </div>
-                                            <div className="w-[1px] mx-2 h-5 bg-gray-400 rounded-full"></div>
-                                            <Link to={`/product/${id}/compare`} className="flex items-center justify-between p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                <GitCompareArrowsIcon size={16} className=" text-green-500 mr-2" />
+
+                                            <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
+                                            
+                                            <Link to={`/product/${id}/compare`} className="flex items-center justify-between p-1  cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                <GitCompareArrowsIcon size={16} className="w-3 md:w-5 text-green-600 mr-1 md:mr-2" />
                                                 <span>Compare</span>
                                             </Link>
                                         </div>
                                     </div>
 
-                                    <div className="block md:hidden">
+                                    {/* <div className="block md:hidden">
                                         <div className="flex items-start justify-between mb-4">
 
                                             <h2 className="text-xl font-bold text-gray-800 mb-2">Apple iPhone 15 Pro Max</h2>
@@ -177,18 +183,15 @@ const Product = () => {
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
 
                                 </div>
                                 <div className="mb-2">
-                                    <span className="font-bold text-gray-700">Product Description:</span>
+                                    <span className="font-bold text-sm text-gray-700">Product Description:</span>
                                     <p className="text-gray-600 text-sm mt-2">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                        sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
-                                        lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
-                                        ut erat vitae nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum lacinia, non
-                                        sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
+                                        vamus commodo nulla ut
                                     </p>
                                 </div>
 
