@@ -10,7 +10,6 @@ import Container from "@/Core/Container";
 import { Progress } from "./ui/progress";
 import Modal from "@/Core/Modal";
 
-
 import {
     Tooltip,
     TooltipContent,
@@ -41,39 +40,6 @@ const Product = () => {
     ]
     return (
         <div>
-
-            <section className="breadcrumb-section section-b-space">
-                <ul className="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <h3>Products</h3>
-                            <nav>
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item">
-                                        <a href="index.html">
-                                            <i className="fas fa-home"></i>
-                                        </a>
-                                    </li>
-                                    <li className="breadcrumb-item active" aria-current="page">Product/{id}</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <div className="bg-white py-8">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row -mx-4">
@@ -313,8 +279,7 @@ const Product = () => {
                                                         </div>
                                                     </div>
                                                     <div className="mt-3">
-                                                        <span className="font-bold">Sapien consequat eleifend!</span>
-                                                        <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                        <p className="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                                     </div>
 
                                                 </div>
@@ -325,7 +290,7 @@ const Product = () => {
                                                 <ScrollArea className="h-[380px] p-2">
 
                                                     {reviews.map((_, index) => (
-                                                        <div key={index} className=" text-start flex items-start mb-4 pb-4 border-b border-gray-300">
+                                                        <div key={index} className="flex items-start mb-4 pb-4 border-b border-gray-300">
                                                             <div className="flex-shrink-0">
                                                                 <div className="inline-block relative">
                                                                     <div className="relative w-10 h-10 rounded-full overflow-hidden">
@@ -349,8 +314,7 @@ const Product = () => {
                                                                     </div>
                                                                 </div>
                                                                 <div className="mt-3">
-                                                                    <span className="font-bold">Sapien consequat eleifend!</span>
-                                                                    <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                                    <p className="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                                                 </div>
 
                                                             </div>
