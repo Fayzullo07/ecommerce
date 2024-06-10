@@ -5,15 +5,17 @@ import { HeartIcon, StarIcon } from "lucide-react";
 import {
     Carousel,
     CarouselContent,
+    CarouselItem,
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import React from "react";
 
+import AutoScroll from "embla-carousel-auto-scroll"
 
 const Product = ({ index }: { data: any, index: number }) => {
     return (
-        <div key={index} className=" w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
+        <div className=" w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
             <Link to={`/product/${index}`}>
                 <div className="overflow-hidden relative h-48 w-full text-center p-1 bg-gray-200">
                     <img className="object-cover w-40 mx-auto hover:scale-105 duration-300" src="https://brostore.uz/cdn/shop/files/green1_pixian_ai_345x_crop_center.png?v=1709802054" alt="Converse sneakers" />
@@ -52,6 +54,10 @@ const Product = ({ index }: { data: any, index: number }) => {
 }
 
 const Products = () => {
+    const plugin2 = React.useRef(
+        AutoScroll({ loop: true, speed: 0.2, autoScroll: true }),
+        // Autoplay({ delay: 2000, stopOnInteraction: true, speed: 1, })
+    )
     const data = [
         {},
         {},
@@ -66,29 +72,21 @@ const Products = () => {
         <div className="bg-white py-10">
             <Container>
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">Products</h2>
-                <Carousel>
+                <Carousel
+                    plugins={[plugin2.current]}
+                    onMouseEnter={plugin2.current.stop}
+                    onMouseLeave={plugin2.current.play}
+                >
                     <CarouselContent>
-                        <ScrollArea className="w-full">
-                            <div className="flex w-max space-x-4 py-4">
-                                {data.map((_, index) => (
-                                    // <CarouselItem >
-                                    <Product data={data[index]} index={index} />
-                                    // </CarouselItem>
-                                ))}
-                            </div>
-                            <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-
+                        {data.map((_, index) => (
+                            <CarouselItem key={index} className=" pr-1 basis-1/2 md:basis-[18%]">
+                                <Product data={data[index]} index={index} />
+                            </CarouselItem>
+                        ))}
                     </CarouselContent>
                     <CarouselPrevious />
                     <CarouselNext />
                 </Carousel>
-
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                    {/* {data.map((_, index) => (
-                        <Product data={data[index]} index={index} />
-                    ))} */}
-                </div>
             </Container>
         </div>
 
