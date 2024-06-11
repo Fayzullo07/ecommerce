@@ -1,7 +1,7 @@
 import ImagesCarusel from "@/Core/ImagesCarusel";
 import Products from "./Products";
 import { Link, useParams } from "react-router-dom";
-import { BellIcon, GitCompareArrowsIcon, HeartIcon, PenLineIcon, PlusIcon, SlidersHorizontalIcon, StarIcon, XIcon } from "lucide-react";
+import {  BellIcon, ChevronDownIcon, ChevronRightIcon, GitCompareArrowsIcon, HeartIcon, PenLineIcon, PlusIcon, SlidersHorizontalIcon, StarIcon, XIcon } from "lucide-react";
 import { SlideshowLightbox } from "lightbox.js-react";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
@@ -292,7 +292,7 @@ const Product = () => {
             {/* Filter */}
             <div className="bg-gray-100 py-2">
                 <Container  >
-                    <ScrollArea className="">
+                    <ScrollArea >
                         <div className="flex items-center justify-start  gap-2 md:gap-4 p-2">
                             <div className="text-base bg-white px-3 py-1.5 border hover:border-black duration-300 rounded-full">
                                 <SlidersHorizontalIcon className="h-5 w-5" />
@@ -317,8 +317,47 @@ const Product = () => {
                         </div>
                         <ScrollBar orientation="horizontal" />
                     </ScrollArea>
+                    <div className="space-y-2 ">
+                        {reviews.map((_, index) => (
+                            <div key={index} className="bg-white border rounded-xl overflow-hidden">
+                                <div className="flex  border-b-2">
+                                    <div className="border w-12 flex items-center justify-center ">
+                                        <ChevronDownIcon className="h-6 w-6" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-14 h-14 rounded overflow-hidden ml-2 p-2">
+                                                <img className="object-cover rounded-full h-full w-full hover:scale-110 duration-300" src="https://www.pricerunner.se/images/brenda/4564eda9ffe90606d125582746e9b5df.jpg?d=40x40&a=center" alt="Product Image" />
+                                            </div>
+                                            <div className="font-semibold text-xl">Amazon</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-between py-2 px-3 md:py-3 md:px-4">
+                                    <div className=" text-base md:text-xl font-semibold text-blue-400 hover:underline duration-300">Iphone 15 pro max</div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="flex items-center flex-col-reverse md:flex-row   gap-2">
+                                            <div className="md:flex hidden items-center gap-2 text-gray-400 text-sm md:text-base">
+                                                <span>Yetkazib berish bepul</span>
+                                                <span>2-3 kun</span>
+                                            </div>
+                                            <div className="text-xl font-semibold">$600</div>
+                                        </div>
+
+                                        <ChevronRightIcon className="h-6 w-6 text-blue-500 cursor-pointer hover:scale-125 duration-300" />
+                                    </div>
+
+                                </div>
+                                <div className="flex md:hidden items-center justify-end gap-2 text-gray-400 text-sm md:text-base px-2 py-1">
+                                    <span>Yetkazib berish bepul</span>
+                                    <span>2-3 kun</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </Container>
             </div>
+
 
             <div className="bg-white py-8 sticky top-">
                 <Container>
