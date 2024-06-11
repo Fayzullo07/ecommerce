@@ -26,6 +26,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
+import Chart from "@/Core/Chart";
 
 
 
@@ -52,7 +53,7 @@ const Product = () => {
     return (
         <div>
             <div className="bg-white py-4">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <Container >
                     <div className="flex flex-col md:flex-row -mx-4">
                         <div className=" hidden md:block space-y-2">
                             <ScrollArea className="h-[380px]">
@@ -70,7 +71,7 @@ const Product = () => {
                             <div className=" h-fit col-span-1 rounded-lg bg-gray-300 mb-4 relative">
                                 {/* <SlideshowLightbox className="space-y-2 overflow-hidden" showThumbnails={true}> */}
 
-                                    <ImagesCarusel images={data} button={false} />
+                                <ImagesCarusel images={data} button={false} />
                                 {/* </SlideshowLightbox> */}
                                 <div className=" absolute top-2 right-3 p-2  cursor-pointer border bg-white rounded-full">
                                     <HeartIcon size={18} className="text-red-500 hover:scale-125 duration-300" />
@@ -84,248 +85,202 @@ const Product = () => {
                                 </div>
                             </div>
 
-                            <div className=" col-span-2 px-4">
-                                <h2 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2 ">Apple iPhone 15 Pro Max</h2>
+                            <div className=" col-span-2 grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4 px-2">
+                                <div className="col-span-2">
+                                    <h2 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2 ">Apple iPhone 15 Pro Max</h2>
 
+                                    <div className="mb-4">
+                                        <div className="">
 
-                                <div className="mb-4">
-                                    <div className="">
+                                            <div className="flex items-center justify-between md:justify-start mt-2 text-xs md:text-sm">
+                                                <TooltipProvider>
+                                                    <Tooltip>
+                                                        <TooltipTrigger>
+                                                            <div className="flex items-center justify-between p-1 cursor-pointer duration-300">
+                                                                <StarIcon className="w-3 md:w-5 text-yellow-600 mr-1 md:mr-2" />
+                                                                <span >4,6</span>
+                                                            </div>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <p>2575 reviews</p>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                </TooltipProvider>
 
-                                        <div className="flex items-center justify-between mt-2 text-xs md:text-sm">
-                                            <TooltipProvider>
-                                                <Tooltip>
-                                                    <TooltipTrigger>
-                                                        <div className="flex items-center justify-between p-1 cursor-pointer duration-300">
-                                                            <StarIcon  className="w-3 md:w-5 text-yellow-600 mr-1 md:mr-2" />
-                                                            <span >4,6</span>
-                                                        </div>
-                                                    </TooltipTrigger>
-                                                    <TooltipContent>
-                                                        <p>2575 reviews</p>
-                                                    </TooltipContent>
-                                                </Tooltip>
-                                            </TooltipProvider>
+                                                <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
 
-                                            <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
+                                                <div className="flex items-center justify-between p-1 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                    <PenLineIcon size={16} className="w-3 md:w-5 text-yellow-600 mr-1 md:mr-2" />
+                                                    <span>Please rate</span>
+                                                </div>
 
-                                            <div className="flex items-center justify-between p-1 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                <PenLineIcon size={16} className="w-3 md:w-5 text-yellow-600 mr-1 md:mr-2" />
-                                                <span>Please rate</span>
+                                                <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
+
+                                                <div className="flex items-center justify-between p-1 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                    <BellIcon size={16} className="w-3 md:w-5 text-red-600 mr-1 md:mr-2" />
+                                                    <span>Monitor price</span>
+                                                </div>
+
+                                                <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
+
+                                                <Link to={`/product/${id}/compare`} className="flex items-center justify-between p-1  cursor-pointer rounded-full hover:bg-slate-200 duration-300">
+                                                    <GitCompareArrowsIcon size={16} className="w-3 md:w-5 text-green-600 mr-1 md:mr-2" />
+                                                    <span>Compare</span>
+                                                </Link>
                                             </div>
-
-                                            <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
-
-                                            <div className="flex items-center justify-between p-1 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                <BellIcon size={16} className="w-3 md:w-5 text-red-600 mr-1 md:mr-2" />
-                                                <span>Monitor price</span>
-                                            </div>
-
-                                            <div className="w-[1px] mx-0.5 md:mx-2 h-4 bg-gray-400 rounded-full"></div>
-                                            
-                                            <Link to={`/product/${id}/compare`} className="flex items-center justify-between p-1  cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                <GitCompareArrowsIcon size={16} className="w-3 md:w-5 text-green-600 mr-1 md:mr-2" />
-                                                <span>Compare</span>
-                                            </Link>
                                         </div>
+
+
+
+
+                                    </div>
+                                    <div className="mb-2">
+                                        <span className="font-bold text-sm text-gray-700">Product Description:</span>
+                                        <p className="text-gray-600 text-sm mt-2">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                                            vamus commodo nulla ut
+                                        </p>
                                     </div>
 
-                                    {/* <div className="block md:hidden">
-                                        <div className="flex items-start justify-between mb-4">
+                                    <div className="block md:hidden">
 
-                                            <h2 className="text-xl font-bold text-gray-800 mb-2">Apple iPhone 15 Pro Max</h2>
+                                        <div className="flex items-center justify-end gap-2 mb-4">
                                             <div>
                                                 <Drawer>
                                                     <DrawerTrigger>
-                                                        <div className="border bg-white hover:bg-gray-300 rounded-full p-1 px-3 space-y-1 hover:scale-110 duration-300">
-                                                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
-                                                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
-                                                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
-                                                        </div>
+                                                        <div className="border bg-white rounded-full p-1 px-3 space-y-1 hover:scale-110 duration-300 cursor-pointer">Colors</div>
                                                     </DrawerTrigger>
                                                     <DrawerContent>
                                                         <DrawerHeader className=" relative">
-                                                            <DrawerTitle>Apple iPhone 15 Pro Max</DrawerTitle>
+                                                            <DrawerTitle>Colors</DrawerTitle>
                                                             <DrawerClose className="absolute top-0 right-0 p-1 px-2 bg-white rounded-full">
                                                                 <XIcon size={16} />
                                                             </DrawerClose>
                                                         </DrawerHeader>
                                                         <DrawerFooter>
-                                                            <div className=" ">
-                                                                <TooltipProvider>
-                                                                    <Tooltip>
-                                                                        <TooltipTrigger>
-                                                                            <div className="flex items-center justify-between p-1 px-2 cursor-pointer duration-300">
-                                                                                <StarIcon size={16} className=" text-yellow-600 mr-4" />
-                                                                                <span>4,6</span>
-                                                                            </div>
-                                                                        </TooltipTrigger>
-                                                                        <TooltipContent>
-                                                                            <p>2575 reviews</p>
-                                                                        </TooltipContent>
-                                                                    </Tooltip>
-                                                                </TooltipProvider>
-                                                                <div className="flex items-center justify-start p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                                    <PenLineIcon size={16} className=" text-yellow-600 mr-4" />
-                                                                    <span>Please rate</span>
+                                                            <div className="flex flex-wrap gap-2 items-center mt-2">
+                                                                <div className="border-2 font-bold flex justify-between items-center p-1 px-3  border-black rounded-full">
+                                                                    <span>All</span>
                                                                 </div>
-                                                                <div className="flex items-center justify-start p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                                    <BellIcon size={16} className=" text-red-500 mr-4" />
-                                                                    <span>Monitor price</span>
+                                                                <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span className="w-6 h-6 rounded-full bg-green-500 border  mr-2"></span>
+                                                                    <span>Green</span>
                                                                 </div>
-                                                                <Link to={`/product/${id}/compare`} className="flex items-center justify-start p-1 px-2 cursor-pointer rounded-full hover:bg-slate-200 duration-300">
-                                                                    <GitCompareArrowsIcon size={16} className=" text-green-500 mr-4" />
-                                                                    <span>Compare</span>
-                                                                </Link>
+
+                                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span className="w-6 h-6 rounded-full bg-red-500 border  mr-2"></span>
+                                                                    <span>Red</span>
+                                                                </div>
+
+                                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span className="w-6 h-6 rounded-full bg-gray-800 border  mr-2"></span>
+                                                                    <span>Gray</span>
+                                                                </div>
+
+                                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span className="w-6 h-6 rounded-full bg-white-800 border  mr-2"></span>
+                                                                    <span>White</span>
+                                                                </div>
                                                             </div>
                                                         </DrawerFooter>
                                                     </DrawerContent>
                                                 </Drawer>
-
                                             </div>
-                                        </div>
-                                    </div> */}
+                                            <div>
+                                                <Drawer>
+                                                    <DrawerTrigger>
+                                                        <div className="border bg-white rounded-full p-1 px-3 space-y-1 hover:scale-110 duration-300 cursor-pointer">Sizes</div>
+                                                    </DrawerTrigger>
+                                                    <DrawerContent>
+                                                        <DrawerHeader className=" relative">
+                                                            <DrawerTitle>Versions</DrawerTitle>
+                                                            <DrawerClose className="absolute top-0 right-0 p-1 px-2 bg-white rounded-full">
+                                                                <XIcon size={16} />
+                                                            </DrawerClose>
+                                                        </DrawerHeader>
+                                                        <DrawerFooter>
+                                                            <div className="flex flex-wrap gap-2 items-center mt-2">
+                                                                <div className="border-2 font-bold flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span>128GB</span>
+                                                                </div>
+                                                                <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span>256GB</span>
+                                                                </div>
 
+                                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span>512GB</span>
+                                                                </div>
 
-                                </div>
-                                <div className="mb-2">
-                                    <span className="font-bold text-sm text-gray-700">Product Description:</span>
-                                    <p className="text-gray-600 text-sm mt-2">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                        vamus commodo nulla ut
-                                    </p>
-                                </div>
-
-                                <div className="flex items-center justify-end gap-2 mb-4">
-                                    <div>
-                                        <Drawer>
-                                            <DrawerTrigger>
-                                                <div className="border bg-white rounded-full p-1 px-3 space-y-1 hover:scale-110 duration-300 cursor-pointer">Colors</div>
-                                            </DrawerTrigger>
-                                            <DrawerContent>
-                                                <DrawerHeader className=" relative">
-                                                    <DrawerTitle>Colors</DrawerTitle>
-                                                    <DrawerClose className="absolute top-0 right-0 p-1 px-2 bg-white rounded-full">
-                                                        <XIcon size={16} />
-                                                    </DrawerClose>
-                                                </DrawerHeader>
-                                                <DrawerFooter>
-                                                    <div className="flex flex-wrap gap-2 items-center mt-2">
-                                                        <div className="border-2 font-bold flex justify-between items-center p-1 px-3  border-black rounded-full">
-                                                            <span>All</span>
-                                                        </div>
-                                                        <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span className="w-6 h-6 rounded-full bg-green-500 border  mr-2"></span>
-                                                            <span>Green</span>
-                                                        </div>
-
-                                                        <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span className="w-6 h-6 rounded-full bg-red-500 border  mr-2"></span>
-                                                            <span>Red</span>
-                                                        </div>
-
-                                                        <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span className="w-6 h-6 rounded-full bg-gray-800 border  mr-2"></span>
-                                                            <span>Gray</span>
-                                                        </div>
-
-                                                        <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span className="w-6 h-6 rounded-full bg-white-800 border  mr-2"></span>
-                                                            <span>White</span>
-                                                        </div>
-                                                    </div>
-                                                </DrawerFooter>
-                                            </DrawerContent>
-                                        </Drawer>
-                                    </div>
-                                    <div>
-                                        <Drawer>
-                                            <DrawerTrigger>
-                                                <div className="border bg-white rounded-full p-1 px-3 space-y-1 hover:scale-110 duration-300 cursor-pointer">Sizes</div>
-                                            </DrawerTrigger>
-                                            <DrawerContent>
-                                                <DrawerHeader className=" relative">
-                                                    <DrawerTitle>Versions</DrawerTitle>
-                                                    <DrawerClose className="absolute top-0 right-0 p-1 px-2 bg-white rounded-full">
-                                                        <XIcon size={16} />
-                                                    </DrawerClose>
-                                                </DrawerHeader>
-                                                <DrawerFooter>
-                                                    <div className="flex flex-wrap gap-2 items-center mt-2">
-                                                        <div className="border-2 font-bold flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span>128GB</span>
-                                                        </div>
-                                                        <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span>256GB</span>
-                                                        </div>
-
-                                                        <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span>512GB</span>
-                                                        </div>
-
-                                                        <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                            <span>1TB</span>
-                                                        </div>
-                                                    </div>
-                                                </DrawerFooter>
-                                            </DrawerContent>
-                                        </Drawer>
-                                    </div>
-                                </div>
-
-                                <div className="hidden md:block">
-
-                                    <div className="mb-4">
-                                        <span className="font-bold text-gray-700">Select Size:</span>
-                                        <div className="flex flex-wrap gap-2 items-center mt-2">
-                                            <div className="border-2 font-bold flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span>128GB</span>
-                                            </div>
-                                            <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span>256GB</span>
-                                            </div>
-
-                                            <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span>512GB</span>
-                                            </div>
-
-                                            <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span>1TB</span>
+                                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                                    <span>1TB</span>
+                                                                </div>
+                                                            </div>
+                                                        </DrawerFooter>
+                                                    </DrawerContent>
+                                                </Drawer>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="mb-4">
-                                        <span className="font-bold text-gray-700">Select Color:</span>
-                                        <div className="flex flex-wrap gap-2 items-center mt-2">
-                                            <div className="border-2 font-bold flex justify-between items-center p-1 px-3  border-black rounded-full">
-                                                <span>All</span>
-                                            </div>
-                                            <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span className="w-6 h-6 rounded-full bg-green-500 border  mr-2"></span>
-                                                <span>Green</span>
-                                            </div>
+                                    <div className="hidden md:block">
 
-                                            <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span className="w-6 h-6 rounded-full bg-red-500 border  mr-2"></span>
-                                                <span>Red</span>
-                                            </div>
+                                        <div className="mb-4">
+                                            <span className="font-bold text-gray-700">Select Size:</span>
+                                            <div className="flex flex-wrap gap-2 items-center mt-2">
+                                                <div className="border-2 font-bold flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span>128GB</span>
+                                                </div>
+                                                <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span>256GB</span>
+                                                </div>
 
-                                            <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span className="w-6 h-6 rounded-full bg-gray-800 border  mr-2"></span>
-                                                <span>Gray</span>
-                                            </div>
+                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span>512GB</span>
+                                                </div>
 
-                                            <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
-                                                <span className="w-6 h-6 rounded-full bg-white-800 border  mr-2"></span>
-                                                <span>White</span>
+                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span>1TB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="mb-4">
+                                            <span className="font-bold text-gray-700">Select Color:</span>
+                                            <div className="flex flex-wrap gap-2 items-center mt-2">
+                                                <div className="border-2 font-bold flex justify-between items-center p-1 px-3  border-black rounded-full">
+                                                    <span>All</span>
+                                                </div>
+                                                <div className="border cursor-pointer flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span className="w-6 h-6 rounded-full bg-green-500 border  mr-2"></span>
+                                                    <span>Green</span>
+                                                </div>
+
+                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span className="w-6 h-6 rounded-full bg-red-500 border  mr-2"></span>
+                                                    <span>Red</span>
+                                                </div>
+
+                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span className="w-6 h-6 rounded-full bg-gray-800 border  mr-2"></span>
+                                                    <span>Gray</span>
+                                                </div>
+
+                                                <div className="border flex justify-between items-center p-1 px-2  border-black rounded-full">
+                                                    <span className="w-6 h-6 rounded-full bg-white-800 border  mr-2"></span>
+                                                    <span>White</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div className="col-span-1 hidden md:block">
+                                    <Chart />
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
 
             <div className="bg-white py-8">
@@ -492,6 +447,14 @@ const Product = () => {
 
             <div>
                 <Products />
+            </div>
+
+            <div>
+                <Container>
+
+                    <h2>Chart</h2>
+                    <Chart />
+                </Container>
             </div>
         </div>
     );
