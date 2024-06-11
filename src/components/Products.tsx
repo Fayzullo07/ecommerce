@@ -32,17 +32,17 @@ const Product = ({ index }: { data: any, index: number }) => {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-1 p-2">
+                <div className="flex flex-col gap-1 p-2 text-gray-700">
                     <div className="grid grid-cols-4 items-start gap-2">
-                        <div className="col-span-3 text-base font-semibold text-gray-700">
+                        <div className="col-span-3 text-base font-semibold">
                             Samsung Galaxy A55 5G 128GB
                         </div>
-                        <div className="col-span-1 flex items-center justify-center">
-                            <StarIcon className="h-4 w-4 mr-2" />
+                        <div className="col-span-1 grid grid-cols-2 items-center gap-1">
+                            <StarIcon className=" h-3 w-3 mr-2" />
                             <span className="text-sm font-semibold">4,6</span>
                         </div>
                     </div>
-                    <span className="font-semibold text-lg text-gray-700 ">$60</span>
+                    <span className="font-semibold text-lg  ">$60</span>
                 </div>
             </Link>
 

@@ -1,9 +1,9 @@
 import ImagesCarusel from "@/Core/ImagesCarusel";
 import Products from "./Products";
 import { Link, useParams } from "react-router-dom";
-import { BellIcon, GitCompareArrowsIcon, HeartIcon, PenLineIcon, PlusIcon, StarIcon, XIcon } from "lucide-react";
+import { BellIcon, FilterIcon, GitCompareArrowsIcon, HeartIcon, PenLineIcon, PlusIcon, SlidersHorizontalIcon, SlidersIcon, StarIcon, XIcon } from "lucide-react";
 import { SlideshowLightbox } from "lightbox.js-react";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Container from "@/Core/Container";
@@ -27,6 +27,15 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import Chart from "@/Core/Chart";
+
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
 
 
 
@@ -280,6 +289,39 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
+                </Container>
+            </div>
+
+            {/* Filter */}
+            <div className="bg-gray-100 py-2">
+                <Container  >
+                    <ScrollArea className="">
+                        <div className="flex items-center justify-start  gap-2 md:gap-4 p-2">
+                            <div className="text-base bg-white px-3 py-1.5 border hover:border-black duration-300 rounded-full">
+                                <SlidersHorizontalIcon className="h-5 w-5" />
+                            </div>
+                            <div className="w-40 text-base bg-white px-3 py-1.5 border hover:border-black duration-300 rounded-full">
+                                Faqat stokda
+                            </div>
+
+                            <div className="w-48 text-base bg-white px-3 py-1.5 border hover:border-black duration-300 rounded-full">
+                                Ishlatilgan maxsulotlar
+                            </div>
+
+                            <Select >
+                                <SelectTrigger className="w-[180px] rounded-full">
+                                    <SelectValue placeholder="Narxalr" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="light">Eng arzon narxlar</SelectItem>
+                                    <SelectItem value="dark">Eng qimmat narxlar</SelectItem>
+                                </SelectContent>
+                            </Select>
+                           
+
+                        </div>
+                        <ScrollBar orientation="horizontal" />
+                    </ScrollArea>
                 </Container>
             </div>
 

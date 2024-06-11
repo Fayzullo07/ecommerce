@@ -5,11 +5,22 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  Title,
+  Tooltip,
+  Legend,
 } from "chart.js";
 import { data, options } from "@/data/data";
 // import { data, options } from "../../api/data";
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  // Title,
+  Tooltip,
+  // Legend
+);
 
 const Chart = () => {
 
@@ -25,7 +36,7 @@ const Chart = () => {
        
       </div>
       <div>
-        <Line width={1200} height={400} data={data} options={options} ></Line>
+        <Line width={1200} height={600} data={data} options={options} ></Line>
       </div>
     </div>
   );
