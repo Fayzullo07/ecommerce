@@ -5,9 +5,7 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
-  Title,
   Tooltip,
-  Legend,
 } from "chart.js";
 import { data, options } from "@/data/data";
 // import { data, options } from "../../api/data";

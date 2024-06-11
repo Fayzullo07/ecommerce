@@ -1,7 +1,7 @@
 import ImagesCarusel from "@/Core/ImagesCarusel";
 import Products from "./Products";
 import { Link, useParams } from "react-router-dom";
-import { BellIcon, FilterIcon, GitCompareArrowsIcon, HeartIcon, PenLineIcon, PlusIcon, SlidersHorizontalIcon, SlidersIcon, StarIcon, XIcon } from "lucide-react";
+import { BellIcon, GitCompareArrowsIcon, HeartIcon, PenLineIcon, PlusIcon, SlidersHorizontalIcon, StarIcon, XIcon } from "lucide-react";
 import { SlideshowLightbox } from "lightbox.js-react";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
@@ -63,7 +63,7 @@ const Product = () => {
         <div>
             <div className="bg-white py-4">
                 <Container >
-                    <div className="flex flex-col md:flex-row -mx-4">
+                    <div className="flex flex-col md:flex-row">
                         <div className=" hidden md:block space-y-2">
                             <ScrollArea className="h-[380px]">
                                 <SlideshowLightbox className="hidden md:block space-y-2 overflow-hidden" showThumbnails={true}>
@@ -76,7 +76,7 @@ const Product = () => {
                             </ScrollArea>
                         </div>
 
-                        <div className="md:flex-1 px-4 grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4">
+                        <div className="md:flex-1 grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4">
                             <div className=" h-fit col-span-1 rounded-lg bg-gray-300 mb-4 relative">
                                 {/* <SlideshowLightbox className="space-y-2 overflow-hidden" showThumbnails={true}> */}
 
@@ -138,9 +138,6 @@ const Product = () => {
                                                 </Link>
                                             </div>
                                         </div>
-
-
-
 
                                     </div>
                                     <div className="mb-2">
@@ -317,19 +314,16 @@ const Product = () => {
                                     <SelectItem value="dark">Eng qimmat narxlar</SelectItem>
                                 </SelectContent>
                             </Select>
-                           
-
                         </div>
                         <ScrollBar orientation="horizontal" />
                     </ScrollArea>
                 </Container>
             </div>
 
-            <div className="bg-white py-8">
+            <div className="bg-white py-8 sticky top-">
                 <Container>
-
-                    <Tabs defaultValue="reviews">
-                        <TabsList>
+                    <Tabs defaultValue="reviews" className="bg-white">
+                        <TabsList className="sticky top-0 z-10 bg-white">
                             <TabsTrigger value="reviews">Reviews</TabsTrigger>
                             <TabsTrigger value="description">Description</TabsTrigger>
                             <TabsTrigger value="qa">Q & A</TabsTrigger>
@@ -406,78 +400,111 @@ const Product = () => {
                                         </div>
 
                                     </div>
-                                    <div className="col-span-2">
+                                    <div className="col-span-2 grid gap-2 space-y-2 ">
                                         {reviews.slice(0, 2).map((_, index) => (
-                                            <div key={index} className="flex items-start mb-4 pb-4 border-b border-gray-300 px-2">
-                                                <div className="flex-shrink-0">
-                                                    <div className="inline-block relative">
-                                                        <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                                                            <img className="absolute top-0 left-0 w-full h-full bg-cover object-fit object-cover" src="https://picsum.photos/id/646/200/200" alt="Profile picture" />
+                                            <div key={index} className=" border p-2 rounded-xl hover:shadow-lg duration-300" >
+                                                <div className="flex items-start">
+                                                    <div className="flex-shrink-0">
+                                                        <div className="inline-block relative">
+                                                            <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                                                                <img className="absolute top-0 left-0 w-full h-full bg-cover object-fit object-cover" src="https://picsum.photos/id/646/200/200" alt="Profile picture" />
+                                                                <div className="absolute top-0 left-0 w-full h-full rounded-full shadow-inner"></div>
+                                                            </div>
                                                         </div>
-
                                                     </div>
-                                                </div>
-                                                <div className="ml-4">
-                                                    <div className="flex items-center justify-between">
-
+                                                    <div className="ml-4">
                                                         <p className="flex items-baseline">
                                                             <span className="text-gray-600 font-bold">Mary T.</span>
                                                         </p>
                                                         <div className="flex items-center mt-1">
-                                                            <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                            <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                            <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                            <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                            <svg className="w-4 h-4 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+
+                                                            <div className="flex items-center">
+                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                <svg className="w-4 h-4 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                            </div>
+                                                            <span className="ml-2 text-green-600 text-xs">07/07/2023</span>
                                                         </div>
                                                     </div>
-
-                                                    <div className="mt-3">
-                                                        <p className="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                </div>
+                                                <div>
+                                                    <div className="mt-3 text-gray-500">
+                                                        <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                    </div>
+                                                    <div className="flex items-center justify-between mt-4 text-sm text-gray-600 fill-current">
+                                                        <div className="flex items-center">
+                                                            <span>Was this review helplful?</span>
+                                                            <button className="flex items-center ml-6">
+                                                                <svg className="w-3 h-3 hover:scale-125 hover:text-green-500 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z" /></svg>
+                                                                <span className="ml-2">56</span>
+                                                            </button>
+                                                            <button className="flex items-center ml-4">
+                                                                <svg className="w-3 h-3 hover:scale-125 hover:text-red-500 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z" /></svg>
+                                                                <span className="ml-2">10</span>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         ))}
                                         <div className=" text-center">
                                             <Modal button={<button className="text-base bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded-full">All</button>} >
-                                                <ScrollArea className="h-[380px] p-2">
-
-                                                    {reviews.map((_, index) => (
-                                                        <div key={index} className="flex items-start mb-4 pb-4 border-b border-gray-300 text-start">
-                                                            <div className="flex-shrink-0">
-                                                                <div className="inline-block relative">
-                                                                    <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                                                                        <img className="absolute top-0 left-0 w-full h-full bg-cover object-fit object-cover" src="https://picsum.photos/id/646/200/200" alt="Profile picture" />
+                                                <ScrollArea className="h-[380px]">
+                                                    <div className="grid gap-2 space-y-2">
+                                                        {reviews.map((_, index) => (
+                                                            <div key={index} className="text-start border p-2 rounded-xl hover:shadow-lg duration-300" >
+                                                                <div className="flex items-start">
+                                                                    <div className="flex-shrink-0">
+                                                                        <div className="inline-block relative">
+                                                                            <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                                                                                <img className="absolute top-0 left-0 w-full h-full bg-cover object-fit object-cover" src="https://picsum.photos/id/646/200/200" alt="Profile picture" />
+                                                                                <div className="absolute top-0 left-0 w-full h-full rounded-full shadow-inner"></div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
+                                                                    <div className="ml-4">
+                                                                        <p className="flex items-baseline">
+                                                                            <span className="text-gray-600 font-bold">Mary T.</span>
+                                                                        </p>
+                                                                        <div className="flex items-center mt-1">
 
+                                                                            <div className="flex items-center">
+                                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                                <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                                <svg className="w-4 h-4 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                                                            </div>
+                                                                            <span className="ml-2 text-green-600 text-xs">07/07/2023</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className="mt-3 text-gray-500">
+                                                                        <p className="mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                                    </div>
+                                                                    <div className="flex items-center justify-between mt-4 text-sm text-gray-600 fill-current">
+                                                                        <div className="flex items-center">
+                                                                            <span>Was this review helplful?</span>
+                                                                            <button className="flex items-center ml-6">
+                                                                                <svg className="w-3 h-3 hover:scale-125 hover:text-green-500 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z" /></svg>
+                                                                                <span className="ml-2">56</span>
+                                                                            </button>
+                                                                            <button className="flex items-center ml-4">
+                                                                                <svg className="w-3 h-3 hover:scale-125 hover:text-red-500 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z" /></svg>
+                                                                                <span className="ml-2">10</span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="ml-4">
-                                                                <div className="flex items-center justify-between">
-
-                                                                    <p className="flex items-baseline">
-                                                                        <span className="text-gray-600 font-bold">Mary T.</span>
-                                                                    </p>
-                                                                    <div className="flex items-center mt-1">
-                                                                        <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                                        <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                                        <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                                        <svg className="w-4 h-4 fill-current text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                                        <svg className="w-4 h-4 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="mt-3">
-                                                                    <p className="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    ))}
+                                                        ))}
+                                                    </div>
                                                 </ScrollArea>
                                             </Modal>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -493,7 +520,6 @@ const Product = () => {
 
             <div>
                 <Container>
-
                     <h2>Chart</h2>
                     <Chart />
                 </Container>
