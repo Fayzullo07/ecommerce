@@ -1,5 +1,5 @@
 
-import { LayoutGridIcon, ShirtIcon, XIcon } from "lucide-react";
+import { LayoutGridIcon, SearchIcon, ShirtIcon, XIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import React from "react";
@@ -22,11 +22,11 @@ const Navbar = () => {
     return (
         <div className=" relative">
 
-            <div className="py-3 px-3  w-full bg-green-900">
+            <div className="py-3 px-3  w-full bg-white shadow border-b">
                 <div className="flex justify-between items-center">
                     <div className="flex justify-items-center items-center gap-2">
-                        <Link to={"/"} className=" font-semibold text-white">LOGO</Link>
-                        <LayoutGridIcon className="text-white" onClick={() => setOpen(!open)} />
+                        <Link to={"/"} className=" text-base md:text-2xl font-bold bg-pink-200 px-4 py-1 tracking-wider rounded-full">LOGO</Link>
+                        <LayoutGridIcon className="w-5 h-5 md:w-6 md:h-6 " onClick={() => setOpen(!open)} />
                         {/* <Sheet>
                             <SheetTrigger>
                                 <AlignLeftIcon className="text-white" />
@@ -61,37 +61,17 @@ const Navbar = () => {
                         </Sheet> */}
 
 
-                        <div className=" relative">
-                            <input className="rounded-3xl py-3 px-3 outline-none text-xs w-[350px] pr-10 hidden lg:block md:block" placeholder="Search for Grocery, Stores, Vegetable, or Meat" />
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor"
-                                className="w-5 h-5 text-green-900 absolute right-3 top-1/2 transform -translate-y-1/2 hidden lg:block md:block">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                            </svg>
-                        </div>
+
 
 
                     </div>
                     <div className="flex justify-items-center items-center gap-2 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            className="w-5 h-5 text-yellow-300 hidden lg:block md:block">
-                            <path fill-rule="evenodd"
-                                d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
-                                clip-rule="evenodd" />
-                        </svg>
+                        <div className=" relative text-black">
+                            <input className=" placeholder:text-black bg-gray-100 rounded-3xl py-2 px-3 outline-none text-base w-[350px] pl-10 hidden lg:block md:block" placeholder="Bugun nima qidiryabsiz?" />
+                            <SearchIcon className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 hidden lg:block md:block" />
 
-                        <p className="text-sm text-white hidden lg:block md:block">Order now and get it within
-                            <span className="text-yellow-300">15 mint!</span></p>
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" className="w-8 h-8 text-white rounded-full ring-2 ring-white p-1 relative">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>
-
-                        <img className="inline-block w-8 h-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                        </div>
+                        <button className="inline-block  rounded-full border px-2 py-0.5 md:px-3 md:py-2 hover:bg-gray-100 duration-300">Tizimga kirish</button>
                     </div>
                 </div>
 
@@ -129,7 +109,7 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                 ))}
-                                
+
                             </div>
                         </div>
                     </div>

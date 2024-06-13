@@ -15,7 +15,7 @@ import AutoScroll from "embla-carousel-auto-scroll"
 
 const Product = ({ index }: { data: any, index: number }) => {
     return (
-        <div className=" w-44 md:w-52 bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
+        <div className=" w-full bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
             <Link to={`/product/${index}`}>
                 <div className="overflow-hidden relative h-48 w-full text-center p-1 bg-gray-200">
                     <img className="object-cover w-40 mx-auto hover:scale-105 duration-300" src="https://brostore.uz/cdn/shop/files/green1_pixian_ai_345x_crop_center.png?v=1709802054" alt="Converse sneakers" />
@@ -80,7 +80,7 @@ const Products = () => {
                     >
                         <CarouselContent>
                             {data.map((_, index) => (
-                                <CarouselItem key={index} className=" pr-1 basis-1/2 md:basis-[18%]">
+                                <CarouselItem key={index} className=" pr-1 basis-1/2 md:basis-1/4 lg:basis-1/6">
                                     <Product data={data[index]} index={index} />
                                 </CarouselItem>
                             ))}
@@ -91,7 +91,7 @@ const Products = () => {
                 </div>
 
                 <div className="block md:hidden">
-                    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
 
                         {data.map((_, index) => (
                             <Product key={index} data={data[index]} index={index} />

@@ -17,6 +17,7 @@ import Products from "./components/Products";
 import 'lightbox.js-react/dist/index.css'
 import { initLightboxJS } from 'lightbox.js-react'
 import Compare from "./pages/Compare";
+import { TailwindIndicator } from "./providers/tailwind-indicator";
 
 const Routing = () => {
 
@@ -63,6 +64,7 @@ function App() {
       <Navbar />
 
       <Routing />
+      <TailwindIndicator />
     </>
   );
 }
