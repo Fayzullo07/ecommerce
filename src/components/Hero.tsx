@@ -2,35 +2,23 @@ import Container from "../Core/Container";
 
 const Hero = () => {
     return (
-        <main className=" bg-white relative overflow-hidden h-screen">
+        <main className=" bg-white relative overflow-hidden p-4">
             <Container>
-                <div className="bg-white flex relative  items-center overflow-hidden">
-                    <div className="container mx-auto px-6 flex relative py-16">
-                        <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative ">
-                            <span className="w-20 h-2 bg-gray-800 mb-12">
-                            </span>
-                            <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-gray-800">
-                                Be on
-                                <span className="text-5xl sm:text-7xl">
-                                    Time
-                                </span>
-                            </h1>
-                            <p className="text-sm sm:text-base text-gray-700">
-                                Dimension of reality that makes change possible and understandable. An indefinite and homogeneous environment in which natural events and human existence take place.
-                            </p>
-                            <div className="flex mt-8">
-                                <a href="#" className="uppercase py-2 px-4 rounded-lg bg-pink-500 border-2 border-transparent text-white text-base mr-4 hover:bg-pink-400">
-                                    Get started
-                                </a>
-                                <a href="#" className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white text-base">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                        <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
-                            <img src="https://www.tailwind-kit.com/images/object/10.png" className="max-w-xs md:max-w-sm m-auto" />
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 h-[95vh]">
+
+                    <div className="grid grid-cols-2 grid-rows-3 gap-4">
+                        <div className="col-span-2 row-span-2 border bg-blue-300">1</div>
+                        <div className="row-start-3 border bg-pink-300">5</div>
+                        <div className="row-start-3 border bg-pink-300">6</div>
                     </div>
+
+                    <div className="grid grid-cols-2 grid-rows-3 gap-4">
+                        <div className="border bg-gray-300" >1</div>
+                        <div className="row-span-2 col-start-1 row-start-2 border bg-red-300">2</div>
+                        <div className="row-span-3 col-start-2 row-start-1 border bg-green-300">3</div>
+                    </div>
+
+
                 </div>
             </Container>
         </main>
