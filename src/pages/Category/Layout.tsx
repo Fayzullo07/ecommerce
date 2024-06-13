@@ -1,5 +1,5 @@
 import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { ShirtIcon } from "lucide-react";
+import { ChevronRightIcon, ShirtIcon } from "lucide-react";
 import { useEffect } from "react";
 import Categories from "./Categories";
 import { categories } from "@/data/data";
@@ -36,9 +36,13 @@ const Layout = () => {
                 <div className="grid grid-cols-6 h-full botder-b-2">
                     <div className="col-span-6 lg:col-span-1 md:col-span-2  border-r-2 ">
                         {categories.map((item, index) => (
-                            <Link to={`/category/${item.name}/?category_id=${item.category_id}`} key={index} className={`${pathname.split("/")[2] == item.name.split(" ").join("%20") ? "bg-gray-100" : ""} text-gray-600 text-lg flex items-center gap-2 py-2 px-4 hover:bg-gray-100 duration-300`}>
-                                <ShirtIcon size={18} className="text-black" />
-                                <span className="text-lg font-medium">{item.name}</span>
+                            <Link to={`/category/${item.name}/?category_id=${item.category_id}`} key={index} className={`${pathname.split("/")[2] == item.name.split(" ").join("%20") ? "bg-gray-100" : ""} text-gray-600 text-lg flex justify-between items-center py-2 px-4 hover:bg-gray-100 duration-300`}>
+                                <div className="flex items-center gap-2">
+
+                                    <ShirtIcon size={18} className="text-black" />
+                                    <span className="text-lg font-medium">{item.name}</span>
+                                </div>
+                                <ChevronRightIcon className="text-black" />
                             </Link>
                         ))}
                     </div>
@@ -49,7 +53,7 @@ const Layout = () => {
                     </div>
                 </div>
 
-                
+
             </div>
 
 

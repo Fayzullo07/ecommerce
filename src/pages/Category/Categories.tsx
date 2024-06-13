@@ -37,7 +37,7 @@ const Categories = () => {
                 <div onClick={() => {
                     // goBack();
                     navigate("/")
-                }} className=" hidden sm:block cursor-pointer hover:scale-125 duration-300 "  >
+                }} className="cursor-pointer hover:scale-125 duration-300 "  >
                     <XIcon className="text-black" />
                 </div>
             </div>
@@ -49,9 +49,9 @@ const Categories = () => {
                             <img className="h-full  mx-auto hover:scale-105 duration-300" src="https://www.tailwind-kit.com/images/object/10.png" alt="" />
                         </div>
                         <div className=" py-2">
-                            <h2 className="text-lg tracking-wide font-bold">{item.name}</h2>
+                            <h2 className="text-sm md:text-lg md:tracking-wide font-bold">{item.name}</h2>
                             {item.children.length > 0 ? item.children.map((item, index) => (
-                                <p key={index} className="text-sm text-gray-900 hover:underline duration-300 cursor-pointer">{item.name}</p>
+                                <p key={index} className="text-xs md:text-sm text-gray-900 hover:underline duration-300 cursor-pointer">{item.name} </p>
                             )) : (
                                 <p className="text-sm text-gray-900">No subcategories</p>
                             )}
