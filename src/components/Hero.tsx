@@ -2,7 +2,7 @@ import Container from "../Core/Container";
 
 const Hero = () => {
     return (
-        <main className=" bg-white relative overflow-hidden p-4">
+        <main className=" bg-white relative overflow-hidden py-4">
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 h-[95vh]">
 
