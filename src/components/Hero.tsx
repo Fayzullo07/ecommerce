@@ -4,9 +4,9 @@ const Hero = () => {
     return (
         <main className=" bg-white relative overflow-hidden h-screen">
             <Container>
-                <div className="bg-white flex relative z-20 items-center overflow-hidden">
+                <div className="bg-white flex relative  items-center overflow-hidden">
                     <div className="container mx-auto px-6 flex relative py-16">
-                        <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
+                        <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative ">
                             <span className="w-20 h-2 bg-gray-800 mb-12">
                             </span>
                             <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-gray-800">

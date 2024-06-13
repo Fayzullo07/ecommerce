@@ -1,25 +1,33 @@
-import { navbar } from "../data/data";
 
-import {
-    Sheet,
-    SheetClose,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTrigger,
-} from "@/components/ui/sheet"
-import { AlignLeftIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LayoutGridIcon, ShirtIcon, XIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import React from "react";
+
+
 const Navbar = () => {
+    const [open, setOpen] = React.useState(false);
+
+    const data = [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+    ]
 
     return (
-        <div className="">
+        <div className=" relative">
+
             <div className="py-3 px-3  w-full bg-green-900">
                 <div className="flex justify-between items-center">
                     <div className="flex justify-items-center items-center gap-2">
-                        <Sheet>
+                        <Link to={"/"} className=" font-semibold text-white">LOGO</Link>
+                        <LayoutGridIcon className="text-white" onClick={() => setOpen(!open)} />
+                        {/* <Sheet>
                             <SheetTrigger>
                                 <AlignLeftIcon className="text-white" />
                             </SheetTrigger>
@@ -50,8 +58,9 @@ const Navbar = () => {
                                     </SheetDescription>
                                 </SheetHeader>
                             </SheetContent>
-                        </Sheet>
-                        <Link to={"/"} className=" font-semibold text-white">LOGO</Link>
+                        </Sheet> */}
+
+
                         <div className=" relative">
                             <input className="rounded-3xl py-3 px-3 outline-none text-xs w-[350px] pr-10 hidden lg:block md:block" placeholder="Search for Grocery, Stores, Vegetable, or Meat" />
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,8 +83,8 @@ const Navbar = () => {
 
                         <p className="text-sm text-white hidden lg:block md:block">Order now and get it within
                             <span className="text-yellow-300">15 mint!</span></p>
-                     
-                        
+
+
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" className="w-8 h-8 text-white rounded-full ring-2 ring-white p-1 relative">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -87,7 +96,49 @@ const Navbar = () => {
                 </div>
 
             </div>
-          
+
+            {open && (
+                <div className="  bg-white  opacity-100  w-full  absolute  top-16  z-[100]">
+
+                    <div className="grid grid-cols-6 h-full botder-b-2">
+                        <div className=" col-span-1 border-2 ">
+                            {data.map((_, index) => (
+                                <div key={index} className=" text-gray-500 text-lg flex items-center gap-2 p-2 hover:bg-gray-200 duration-300">
+                                    <ShirtIcon size={18} className="text-black" />
+                                    <span>Shirt</span>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="col-span-5 px-6 border-b-2">
+                            <h2 className="py-4 text-lg md:text-2xl font-bold">Mobile va Akksesuarlar</h2>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 pb-6">
+                                {data.map((_, index) => (
+                                    <div key={index}>
+                                        <div className="p-4 bg-gray-200 rounded-lg h-40 ">
+
+                                            <img className="h-full  mx-auto" src="https://www.tailwind-kit.com/images/object/10.png" alt="" />
+                                        </div>
+                                        <div className=" py-2">
+                                            <h2 className="text-base font-bold">Kiyiladigan buyumlar</h2>
+                                            <p className="text-sm text-gray-500">lorem ipsum</p>
+                                            <p className="text-sm text-gray-500">lorem ipsum</p>
+                                            <p className="text-sm text-gray-500">lorem ipsum</p>
+                                            <p className="text-sm text-gray-500">lorem ipsum</p>
+                                            <p className="text-sm text-gray-500">lorem ipsum</p>
+
+                                        </div>
+                                    </div>
+                                ))}
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className=" absolute top-5 right-5 cursor-pointer hover:scale-125 duration-300 " onClick={() => setOpen(false)} >
+                        <XIcon className="text-black" />
+                    </div>
+                </div>
+            )}
         </div >
     )
 }
