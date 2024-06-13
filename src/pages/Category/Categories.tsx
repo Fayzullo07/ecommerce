@@ -1,9 +1,19 @@
+import { categoriese } from "@/data/data";
+import { XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+
+const useQuery = () => {
+    return new URLSearchParams(useLocation().search);
+};
 
 const Categories = () => {
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
+    const query = useQuery();
+    const selectedCategoryId = query.get('category_id');
+    console.log(selectedCategoryId);
 
     useEffect(() => {
         // Yuklanish holatini ko'rsatish uchun timeoutdan foydalanamiz
@@ -22,21 +32,29 @@ const Categories = () => {
     }
     return (
         <div className="">
-            <h2 className="py-4 text-lg md:text-2xl font-bold">Mobile va Aksesuarlar {id}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4 pb-6">
-                {Array.from({ length: 10 }).map((_, index) => (
+            <div className="flex justify-between items-center">
+                <h2 className="py-4 text-lg md:text-2xl font-bold"> {id}</h2>
+                <div onClick={() => {
+                    // goBack();
+                    navigate("/")
+                }} className=" hidden sm:block cursor-pointer hover:scale-125 duration-300 "  >
+                    <XIcon className="text-black" />
+                </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 py-4 pb-6">
+                {categoriese.map((item, index) => (
                     <div key={index}>
                         <div className="p-4 bg-gray-200 rounded-lg h-40 ">
 
                             <img className="h-full  mx-auto hover:scale-105 duration-300" src="https://www.tailwind-kit.com/images/object/10.png" alt="" />
                         </div>
                         <div className=" py-2">
-                            <h2 className="text-lg tracking-wide font-bold">Kiyiladigan buyumlar</h2>
-                            <p className="text-sm text-gray-900">Lorem ipsum</p>
-                            <p className="text-sm text-gray-900">lorem ipsum</p>
-                            <p className="text-sm text-gray-900">Lorem ipsum</p>
-                            <p className="text-sm text-gray-900">lorem ipsum</p>
-                            <p className="text-sm text-gray-900">lorem ipsum</p>
+                            <h2 className="text-lg tracking-wide font-bold">{item.name}</h2>
+                            {item.children.length > 0 ? item.children.map((item, index) => (
+                                <p key={index} className="text-sm text-gray-900 hover:underline duration-300 cursor-pointer">{item.name}</p>
+                            )) : (
+                                <p className="text-sm text-gray-900">No subcategories</p>
+                            )}
 
                         </div>
                     </div>

@@ -1,14 +1,14 @@
 import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { ShirtIcon, XIcon } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { ShirtIcon } from "lucide-react";
+import { useEffect } from "react";
 import Categories from "./Categories";
+import { categories } from "@/data/data";
 
 const Layout = () => {
     const { pathname } = useLocation();
     const navigate = useNavigate();
-    const previousLocation = useRef<string | null>(null);
 
-    console.log(previousLocation);
+    console.log(pathname.split("/"));
 
     // const goBack = () => {
     //     if (previousLocation.current) {
@@ -22,7 +22,7 @@ const Layout = () => {
     //     previousLocation.current = window.location.pathname;
     // };
     useEffect(() => {
-        navigate("/category/0");
+        navigate(`/category/${categories[0].name}/?category_id=${categories[0].category_id}`);
 
     }, []);
 
@@ -34,27 +34,22 @@ const Layout = () => {
             <div className=" relative ">
 
                 <div className="grid grid-cols-6 h-full botder-b-2">
-                    <div className=" col-span-1 border-r-2 ">
-                        {Array.from({ length: 10 }).map((_, index) => (
-                            <Link to={`/category/${index}`} key={index} className={`${pathname.split("/")[2] == index.toString() ? "bg-gray-100" : ""} text-gray-600 text-lg flex items-center gap-2 py-2 px-4 hover:bg-gray-100 duration-300`}>
+                    <div className="col-span-6 lg:col-span-1 md:col-span-2  border-r-2 ">
+                        {categories.map((item, index) => (
+                            <Link to={`/category/${item.name}/?category_id=${item.category_id}`} key={index} className={`${pathname.split("/")[2] == item.name.split(" ").join("%20") ? "bg-gray-100" : ""} text-gray-600 text-lg flex items-center gap-2 py-2 px-4 hover:bg-gray-100 duration-300`}>
                                 <ShirtIcon size={18} className="text-black" />
-                                <span>Shirt {index}</span>
+                                <span className="text-lg font-medium">{item.name}</span>
                             </Link>
                         ))}
                     </div>
-                    <div className="col-span-5 px-6 border-b-2">
+                    <div className="col-span-6 lg:col-span-5 md:col-span-4  px-6 border-b-2 hiddn sm:bock">
                         <Routes>
                             <Route path="/:id" element={<Categories />} />
                         </Routes>
                     </div>
                 </div>
 
-                <div onClick={() => {
-                    // goBack();
-                    navigate("/")
-                }} className=" absolute  top-5 right-5 cursor-pointer hover:scale-125 duration-300 "  >
-                    <XIcon className="text-black" />
-                </div>
+                
             </div>
 
 

@@ -13,7 +13,7 @@ import React from "react";
 
 import AutoScroll from "embla-carousel-auto-scroll"
 
-const Product = ({ index }: { data: any, index: number }) => {
+export const Product = ({ index }: { data: any, index: number }) => {
     return (
         <div className=" w-full bg-white rounded-lg hover:shadow-lg duration-300 overflow-hidden">
             <Link to={`/product/${index}`}>

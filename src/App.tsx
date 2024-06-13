@@ -19,6 +19,7 @@ import { initLightboxJS } from 'lightbox.js-react'
 import Compare from "./pages/Compare";
 import { TailwindIndicator } from "./providers/tailwind-indicator";
 import Layout from "./pages/Category/Layout";
+import ProductsCategory from "./pages/Products/ProductsCategory";
 
 const Routing = () => {
 
@@ -26,6 +27,12 @@ const Routing = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/category/*" element={<Layout />} />
+
+      <Route
+        path="/category/products"
+        element={<ProductsCategory />}
+      />
+
       <Route
         path="/products"
         element={<Products />}
