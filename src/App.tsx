@@ -29,7 +29,7 @@ const Routing = () => {
       <Route path="/category/*" element={<Layout />} />
 
       <Route
-        path="/category/products"
+        path="/categories/products"
         element={<ProductsCategory />}
       />
 

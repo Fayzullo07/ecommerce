@@ -1,7 +1,7 @@
 import { categoriese } from "@/data/data";
 import { XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 const useQuery = () => {
     return new URLSearchParams(useLocation().search);
@@ -44,14 +44,16 @@ const Categories = () => {
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 py-4 pb-6">
                 {categoriese.map((item, index) => (
                     <div key={index}>
-                        <div className="p-4 bg-gray-200 rounded-lg h-40 ">
+                        <Link to={`/categories/products`}>
+                            <div className="p-4 bg-gray-200 rounded-lg h-40 ">
 
-                            <img className="h-full  mx-auto hover:scale-105 duration-300" src="https://www.tailwind-kit.com/images/object/10.png" alt="" />
-                        </div>
+                                <img className="h-full  mx-auto hover:scale-105 duration-300" src="https://www.tailwind-kit.com/images/object/10.png" alt="" />
+                            </div>
+                        </Link>
                         <div className=" py-2">
-                            <h2 className="text-sm md:text-lg md:tracking-wide font-bold">{item.name}</h2>
+                            <Link to={`/categories/products`} className="text-sm md:text-lg md:tracking-wide font-bold">{item.name}</Link>
                             {item.children.length > 0 ? item.children.map((item, index) => (
-                                <p key={index} className="text-xs md:text-sm text-gray-900 hover:underline duration-300 cursor-pointer">{item.name} </p>
+                                <Link to={`/categories/products`} key={index} className="text-xs md:text-sm text-gray-900 hover:underline duration-300 cursor-pointer">{item.name} </Link>
                             )) : (
                                 <p className="text-sm text-gray-900">No subcategories</p>
                             )}

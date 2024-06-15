@@ -8,6 +8,19 @@ const Home = () => {
     return (
         <div>
             <Hero />
+            <ul className='list list-inline ml-auto filterTab mb-0 res-full'>
+
+
+                <li className="list list-inline-item">
+                    <a className={`cursor text-capitalize `}
+
+                    >
+                        cat
+                    </a>
+                </li>
+
+
+            </ul>
             <div>
                 <Container>
                     <div >
