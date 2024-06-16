@@ -94,8 +94,8 @@ const Product = () => {
                                 </div>
                             </div>
 
-                            <div className=" col-span-2 grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4 px-2">
-                                <div className="col-span-2">
+                            <div className=" col-span-2 grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-4">
+                                <div className="col-span-3">
                                     <h2 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2 ">Apple iPhone 15 Pro Max</h2>
 
                                     <div className="mb-4">
@@ -279,7 +279,7 @@ const Product = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-span-1 hidden md:block">
+                                <div className="col-span-2 hidden md:block">
                                     <Chart />
                                 </div>
 

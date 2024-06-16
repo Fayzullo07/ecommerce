@@ -20,6 +20,7 @@ import Compare from "./pages/Compare";
 import { TailwindIndicator } from "./providers/tailwind-indicator";
 import Layout from "./pages/Category/Layout";
 import ProductsCategory from "./pages/Products/ProductsCategory";
+import PageTest from "./pages/PageTest";
 
 const Routing = () => {
 
@@ -36,6 +37,11 @@ const Routing = () => {
       <Route
         path="/products"
         element={<Products />}
+      />
+
+      <Route
+        path="/test"
+        element={<PageTest />}
       />
 
       <Route
