@@ -72,7 +72,11 @@ const Products = () => {
     return (
         <div className="bg-white py-10">
             <Container>
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Products</h2>
+                <div  className="flex items-center justify-between">
+
+                    <h2 className="text-3xl font-bold text-gray-800 mb-4">Products</h2>
+                    <Link to={`/categories/products`} className="text-base font-semibold">All Products</Link>
+                </div>
                 <div className="hidden md:block">
                     <Carousel
                         plugins={[plugin2.current]}
